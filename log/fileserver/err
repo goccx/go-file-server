@@ -1,0 +1,46 @@
+2025-12-02 18:40:23	ERROR	base/log.go:38	failed to initialize database, got error dial tcp: lookup mysql on 127.0.0.53:53: server misbehaving
+2025-12-02 18:40:26	ERROR	base/log.go:38	failed to initialize database, got error dial tcp: lookup mysql on 127.0.0.53:53: server misbehaving
+2025-12-02 18:40:29	ERROR	base/log.go:38	failed to initialize database, got error dial tcp: lookup mysql on 127.0.0.53:53: server misbehaving
+2025-12-02 18:40:48	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:40:51	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:40:54	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:41:31	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:33060: connect: connection refused
+2025-12-02 18:41:34	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:33060: connect: connection refused
+2025-12-02 18:46:00	ERROR	base/log.go:45	SQL error, sql: SELECT * FROM `avatar` WHERE user_id = 1 ORDER BY `avatar`.`id` LIMIT 1, rows: 0, elapsed: 0, err: record not found
+2025-12-02 18:56:49	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:56:52	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:56:55	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:56:58	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:57:01	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:57:04	ERROR	base/log.go:38	failed to initialize database, got error dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:57:07	FATAL	init/init.go:38	数据库连接失败: dial tcp 192.168.31.66:3306: connect: connection refused
+2025-12-02 18:57:54	ERROR	core/respone.go:135	验证码错误, err: 验证码错误
+go-file-server/internal/services/normal/apis/auth.(*Authenticator).verify
+	/home/test/gitwork/file_server_project/go-file-server/internal/services/normal/apis/auth/login.go:72
+go-file-server/internal/services/normal/apis/auth.(*Authenticator).AuthHandler
+	/home/test/gitwork/file_server_project/go-file-server/internal/services/normal/apis/auth/login.go:50
+github.com/gin-gonic/gin.(*Context).Next
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go-file-server/internal/common/middlewares.GinRecovery.func1
+	/home/test/gitwork/file_server_project/go-file-server/internal/common/middlewares/log.go:133
+github.com/gin-gonic/gin.(*Context).Next
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go-file-server/internal/common/middlewares.ErrorHandlingMiddleware.func1
+	/home/test/gitwork/file_server_project/go-file-server/internal/common/middlewares/error.go:11
+github.com/gin-gonic/gin.(*Context).Next
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go-file-server/internal/common/middlewares.Glog.GinLogger.func1
+	/home/test/gitwork/file_server_project/go-file-server/internal/common/middlewares/log.go:51
+github.com/gin-gonic/gin.(*Context).Next
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/opt/gopath/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	/usr/local/go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	/usr/local/go/src/net/http/server.go:2009
+runtime.goexit
+	/usr/local/go/src/runtime/asm_amd64.s:1650
+2025-12-02 18:58:07	ERROR	base/log.go:45	SQL error, sql: SELECT * FROM `avatar` WHERE user_id = 1 ORDER BY `avatar`.`id` LIMIT 1, rows: 0, elapsed: 0, err: record not found

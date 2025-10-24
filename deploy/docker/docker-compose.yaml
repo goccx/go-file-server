@@ -1,0 +1,64 @@
+version: "3"
+services:
+  go-file-server:
+    image: goccx/go-file-server
+    container_name: go-file-server
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+        #ports:
+      # http端口
+      #- 9090:9090
+      # ftp端口
+      #- 32121:32121
+      # ftp被动端口
+      #- 32122-32125:32122-32125
+    volumes:
+      - ./config/config.yaml:/config.yaml
+      - ./basedir:/basedir
+    depends_on:
+      - mysql
+
+  go-file-server-ui:
+    image: goccx/go-file-server-ui
+    container_name: go-file-server-ui
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 9000:80
+    depends_on:
+      - go-file-server
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.2
+    environment:
+      MYSQL_ROOT_PASSWORD: yourpassword
+      MYSQL_DATABASE: dev
+    ports:
+      - "13306:3306"
+    volumes:
+      - "./mysql/data:/var/lib/mysql"
+      - "./mysql/my.cnf:/etc/mysql/conf.d/my.cnf"
+
+  # redis:
+  #   image: redis:7.2.5-alpine3.20
+  #   container_name: redis
+  #   command: ["redis-server", "/etc/redis/redis.conf"]
+  #   ports:
+  #   - 6379:6379
+  #   volumes:
+  #   - ./redis/redis.conf:/etc/redis/redis.conf:r
+  #   - ./redis/data:/data
+  #   - /etc/localtime:/etc/localtime
+
+  # dex:
+  #   image: dexidp/dex:v2.41.1
+  #   container_name: dex
+  #   environment:
+  #     DEX_API_CONNECTORS_CRUD: "true"
+  #   ports:
+  #   - 5556:5556
+  #   - 5557:5557
+  #   volumes:
+  #     - ./dex/dex.yaml:/etc/dex/config.docker.yaml
